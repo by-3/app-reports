@@ -1,48 +1,21 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 interface ButtonProps {
-  name1?: string;
-  color?: string;
-  type: "primary" | "circular" | "double";
-  children?: React.ReactNode;
+  name?: string;
   onPress?: () => void;
 }
 
-function MainButton({ name1, color, type, children, onPress }: ButtonProps) {
-  switch (type) {
-    case "primary":
-      return (
-        <Pressable style={styles.buttonPrimary} onPress={onPress}>
-          <Text style={{ color: "#FFFFFF" }}>{name1}</Text>
-        </Pressable>
-      );
-    case "circular":
-      return (
-        <Pressable style={[styles.buttonCircular, { backgroundColor: color }]}>
-          {children}
-        </Pressable>
-      );
-    case "double":
-      return (
-        <View style={styles.container}>
-          <Pressable
-            style={[styles.buttonDouble, { backgroundColor: "#1E8E3E" }]}
-          >
-            <Text style={{ color: "#FFFFFF" }}>إكسل</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.buttonDouble, { backgroundColor: "#1C69D3" }]}
-          >
-            <Text style={{ color: "#FFFFFF" }}>طباعة</Text>
-          </Pressable>
-        </View>
-      );
-  }
+function MainButton({ name, onPress }: ButtonProps) {
+  return (
+    <Pressable style={styles.button} onPress={onPress}>
+      <Text style={{ color: "#FFFFFF" }}>{name}</Text>
+    </Pressable>
+  );
 }
 
-const styles = StyleSheet.create({
-  buttonPrimary: {
+export const styles = StyleSheet.create({
+  button: {
     backgroundColor: "#217ABA",
     height: 50,
     width: 200,
@@ -51,25 +24,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     margin: 5,
   },
-  buttonCircular: {
-    height: 50,
-    width: 50,
-    borderRadius: 50,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   container: {
     flexDirection: "row",
     borderRadius: 15,
     overflow: "hidden",
     gap: 5,
-  },
-  buttonDouble: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 15,
-    paddingHorizontal: 20,
   },
 });
 

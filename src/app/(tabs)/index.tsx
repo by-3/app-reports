@@ -19,7 +19,7 @@ export default function Index() {
         />
         <Text>Welcome, Uesr</Text>
         {buttonnames.map((name, index) => (
-          <MainButton key={index} type="primary" name1={name} />
+          <MainButton key={index} name={name} />
         ))}
       </View>
     </BackGound>
