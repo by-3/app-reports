@@ -1,3 +1,4 @@
+import BackGound from "@/src/components/BackGround";
 import mainStyles from "@/src/styles/styles";
 import { useState } from "react";
 import {
@@ -33,24 +34,29 @@ export default function Settings() {
   const isSaveDisabled = tempUserName === userName;
 
   return (
-    <View style={mainStyles.container}>
-      <Text style={styles.text}>Enter User Name</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={setTempUserName}
-        value={tempUserName}
-        placeholder="Example: Abdullah Yousef"
-        autoFocus={true}
-      />
-      <Pressable
-        style={[styles.buttonPrimary, isSaveDisabled && styles.buttonDisabled]}
-        onPress={handleSave}
-        disabled={isSaveDisabled}
-      >
-        <Text style={styles.buttonText}>SAVE</Text>
-      </Pressable>
-      <Text>Current User : {userName}</Text>
-    </View>
+    <BackGound>
+      <View style={mainStyles.container}>
+        <Text style={styles.text}>Enter User Name</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={setTempUserName}
+          value={tempUserName}
+          placeholder="Example: Abdullah Yousef"
+          autoFocus={true}
+        />
+        <Pressable
+          style={[
+            styles.buttonPrimary,
+            isSaveDisabled && styles.buttonDisabled,
+          ]}
+          onPress={handleSave}
+          disabled={isSaveDisabled}
+        >
+          <Text style={styles.buttonText}>SAVE</Text>
+        </Pressable>
+        <Text>Current User : {userName}</Text>
+      </View>
+    </BackGound>
   );
 }
 

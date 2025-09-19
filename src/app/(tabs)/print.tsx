@@ -1,17 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import BackGound from "@/src/components/BackGround";
+import mainStyles from "@/src/styles/styles";
+import { Text, View } from "react-native";
 
 export default function Print() {
   return (
-    <View style={styles.container}>
-      <Text>print</Text>
-    </View>
+    <BackGound>
+      <View style={mainStyles.container}>
+        <Text>print</Text>
+      </View>
+    </BackGound>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

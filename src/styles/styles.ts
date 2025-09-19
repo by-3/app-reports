@@ -1,4 +1,3 @@
-// src/styles/styles.ts
 import { StyleSheet } from "react-native";
 
 const mainStyles = StyleSheet.create({

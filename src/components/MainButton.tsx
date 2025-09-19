@@ -3,13 +3,13 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface ButtonProps {
   name1?: string;
-  name2?: string;
+  color?: string;
   type: "primary" | "circular" | "double";
   children?: React.ReactNode;
   onPress?: () => void;
 }
 
-function MainButton({ name1, name2, type, children, onPress }: ButtonProps) {
+function MainButton({ name1, color, type, children, onPress }: ButtonProps) {
   switch (type) {
     case "primary":
       return (
@@ -18,7 +18,11 @@ function MainButton({ name1, name2, type, children, onPress }: ButtonProps) {
         </Pressable>
       );
     case "circular":
-      return <Pressable style={styles.buttonCircular}>{children}</Pressable>;
+      return (
+        <Pressable style={[styles.buttonCircular, { backgroundColor: color }]}>
+          {children}
+        </Pressable>
+      );
     case "double":
       return (
         <View style={styles.container}>

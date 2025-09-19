@@ -1,17 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import BackGound from "@/src/components/BackGround";
+import OldReportCard from "@/src/components/OldReportCard";
+import React from "react";
+import { ScrollView } from "react-native";
 
 export default function Archive() {
   return (
-    <View style={styles.container}>
-      <Text>archive</Text>
-    </View>
+    <BackGound>
+      <ScrollView>
+        <OldReportCard />
+        <OldReportCard />
+        <OldReportCard />
+        <OldReportCard />
+        <OldReportCard />
+        <OldReportCard />
+      </ScrollView>
+    </BackGound>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
