@@ -3,7 +3,7 @@ import MainButton from "@/src/components/MainButton";
 import mainStyles from "@/src/styles/styles";
 import { Image, Text, View } from "react-native";
 
-const buttonnames = [
+const buttonholes : string[] = [
   "محضر جديد",
   "استعراض المحاضر القديمة",
   "طباعة جميع المحاظر PDF",
@@ -18,7 +18,7 @@ export default function Index() {
           style={{ height: 200, width: 200, marginBottom: 100 }}
         />
         <Text>Welcome, Uesr</Text>
-        {buttonnames.map((name, index) => (
+        {buttonholes.map((name, index) => (
           <MainButton key={index} name={name} />
         ))}
       </View>
